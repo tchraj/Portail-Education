@@ -1,0 +1,34 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %} Login {% endblock title %}
+
+{% block main-content %}
+<br><br><br><br>
+<body style=" background-image:url('static/images/desi.png')"> 
+    <br><br><br><br>
+    <h1 class="" style="color:green;text-align: center;">Welcome to Your Favorite Studies Portal</h1><br>
+    <h3 style="text-align: center;">Please Sign Up to Continue</h3>
+    <div class="container">
+        <div class="col-sm-5 offset-sm-3">
+            <br><br>
+            <h3 class="text-center" style="color:rgb(255, 0, 0)">Authentication</h3>
+            <hr style="line-height: 2px; color:rgb(21, 75, 146) ;">
+            <form action="" method="post" novalidate class="shadow p-5" style="border-style: groove;border-radius: 20px;background-color: white;height: 500px;">
+                {% csrf_token %}
+                {% for fm in form %}
+                    {{fm.label_tag}} {{fm}} <small class = "text-danger">{{fm.errors|striptags}}</small>
+                    <br><br><br>
+                {% endfor %}
+                <input type="submit" value="Login" class="btn btn-success"> <br>
+                <div class="text-center fw-bold">
+                    <small >If You don't have an Account <a href="{% url 'registration' %}" style="text-decoration: none;" > Regitrate now </a></small>
+                </div>
+                <!--<a href="{% url 'home' %}" style="float:right;text-decoration: none;color:black;float: inline-end; margin-right:-90%;">Get started</a>-->
+
+            </form>
+        </div>
+    </div>
+    <br><br>
+</body>
+<br><br><br>
+{% endblock main-content %}

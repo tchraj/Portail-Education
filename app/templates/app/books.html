@@ -1,0 +1,63 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block title %} Books {% endblock title %}
+
+{% block main-content %}
+<br><br><br><br><br><br>
+<section class="text-center container">
+    <h2>Search books and browse your favorite</h2>
+    <p>Just enter the search querry to obtain the results </p><b></b>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Submit" class="btn btn-success">
+    </form><br>
+    {% for  result in  results %}
+    <a href="{{result.preview}}" target="_blank">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="{{result.thumbnail}}" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-9">
+                        <h3 class="p-0 m-0" style="text-dcoration:none;">{{result.title}}</h3>
+                        <b>
+                            <u>
+                                <h5 class="p-0 m-0" style="text-dcoration:none;">{{result.subtitle}}</h5>
+                            </u>
+                                </b>
+                        {% if result.description %}
+                            <h6 class="p-0 m-1" style="text-dcoration:none;">{{result.description}}</h6>
+                        {% endif %}
+                        <b>
+                            {% if result.categories %}
+                                <h6 class="m1-0 mt-3" style="text-dcoration:none;">Category:
+                                    {% for category in result.categories %}
+                                        {{category}}
+                                    {% endfor %}
+                                </h6>
+                            {% endif %}
+                            {% if result.count %}
+                                <h6 class="m1-0 mt-1" style="text-dcoration:none;">Pages:
+                                    {{result.count}}
+                                </h6>
+                            {% endif %}
+                            {% if result.rating %}
+                                <h6 class="m1-0 mt-1" style="text-dcoration:none;">Rating:
+                                    {{result.rating}}
+                                </h6>
+                            {% endif %}
+                        </b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</section>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% endblock main-content %}

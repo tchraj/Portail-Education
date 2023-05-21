@@ -1,0 +1,97 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block title %} Home {% endblock title %}
+
+
+<!--{% block banner-slider %}
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">-->
+      <!--</div>
+      <div class="carousel-item">
+        <img src="{% static 'images/belle.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/banner3.jpeg' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+</div>
+
+{% endblock banner-slider %}-->
+
+{% block main-content %}
+    <!--<h1 class="mb-3" style="background-color: rgb(36, 4, 221);"><marquee behaviour="alternate" style="background-attachment: fixed; color:red">Welcome to Your Favorite Studies Portal</marquee></h1>-->
+    <br>
+    <br>
+    <div class="container">
+    </div><br><br>
+    <div class="container">
+        <h1 class="text-center">Welcome <span class="text-capitalize">{{request.user}}</span> </h1>
+        <p class="text-center text-dark" style="font-size: 40px;padding-right: 15px;padding-left: 15px;background-color: rgb(243, 238, 238);">Nos Activités</p><br>
+        <div class="row">
+            <div class="col-lg-3">
+                <a href="{% url 'youtube' 'HTM' %}" style="text-decoration:none;" >
+                    <div class="card shadow" style="width: 17rem; height: 350px;margin-bottom: 10px;">
+                        <img src="{% static 'images/htcs.jpg' %}" class="card-img-top" alt="" style="height:185px;">
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <a href="{% url 'youtube' 'PYT' %}" style="text-decoration:none;" >
+                <div class="card shadow" style="width: 17rem; height: 350px;margin-bottom: 10px;">
+                    <img src="{% static 'images/pyth4.jpg' %}" class="card-img-top" alt="" style="height:185px;">
+                </div>
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <a href="{% url 'youtube' 'MAR' %}" style="text-decoration:none;" >
+                <div class="card shadow" style="width: 17rem; height: 350px;margin-bottom: 10px;">
+                    <img src="{% static 'images/MY2.jpg' %}" class="card-img-top" alt="" style="height:185px;" >
+                </div>
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <a href="{% url 'youtube' 'JAV' %}" style="text-decoration:none;" >
+                <div class="card shadow" style="width: 17rem; height: 350px;margin-bottom: 10px;">
+                    <img src="{% static 'images/java.jpg' %}" class="card-img-top" alt="" style="height:185px;" >
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <a href="{% url 'youtube' 'Csharp' %}" style="text-decoration:none;" >
+                <div class="card shadow" style="width: 17rem; height: 350px;margin-bottom: 5px;">
+                    <img src="{% static 'images/dj.jpg' %}" class="card-img-top" alt="" style="height:185px;" >
+                </div>
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <a href="{% url 'youtube' 'ENG' %}" style="text-decoration:none;" >
+                <div class="card shadow" style="width: 17rem; height: 350px;margin-bottom: 5px;">
+                    <img src="{% static 'images/en.jpg' %}" class="card-img-top" alt="" style="height:185px;" >
+                </div>
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <a href="{% url 'youtube' 'PHP' %}" style="text-decoration:none;" >
+                <div class="card shadow" style="width: 17rem; height: 350px;margin-bottom: 5px;">
+                    <img src="{% static 'images/php.jpg' %}" class="card-img-top" alt="" style="height:185px;" >
+                </div>
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <a href="{% url 'youtube' 'C' %}" style="text-decoration:none;" >
+                <div class="card shadow" style="width: 17rem; height: 350px;margin-bottom: 5px;">
+                    <img src="{% static 'images/xml.jpg' %}" class="card-img-top" alt="" style="height:185px;" >
+                </div>
+                </a>
+            </div>
+        </div>       
+    </div>
+<br>
+<br>
+{% endblock main-content %}

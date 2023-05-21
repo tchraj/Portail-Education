@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %} Registration {% endblock title %}
+{% block main-content %}
+<body style= "background-image:url('static/images/desi.png')"> 
+<br><br><br><br><br><br>
+    <div class="container">
+        <h1 style="color:green;text-align: center;">Registrate Yourself to take part of our Courses</h1><br>
+        <div class="col-sm-6 offset-sm-3">
+            <h3 class="text-center" style="color:rgb(255, 0, 0);">Registration</h3>
+            <hr>
+            <form action="" method="post" novalidate class="shadow p-5" style="border-style: groove;border-radius: 20px;background-color: white;height:600px;width:600px;">
+                {% csrf_token %}
+                {% for fm in form %}
+                    {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small>
+                    <br><br>
+                {% endfor %}
+                <input type="submit" value="Sign Up" class="btn btn-success"><br>
+                <div class="text-center fw-bold">
+                    <small> Existing Account ?<a href="{% url 'login' %}"> Login Now</a></small>
+                </div>
+            </form>
+        </div>
+    </div>
+</body> 
+<br><br><br><br><br><br><br><br><br><br>  
+{% endblock main-content %}

@@ -1,0 +1,189 @@
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+        
+        .imagee{
+            text-decoration: none;
+        }
+        .dropdown:hover .dropdown-menu{
+            background-color:rgb(243, 159, 90);
+            display: block;
+            border-radius: 15px;
+        }
+        .nav-item:hover{
+            background-color: green;
+            border-radius: 8px;
+            color:rgb(235, 175, 96);
+        }
+        .you:hover{
+            background-color:rgb(247, 150, 247);
+        }    
+        .text {
+            position:absolute;
+            top:0px;
+            text-align: center;
+            color: rgb(12, 22, 24);
+            font-size: 60px;
+            width: 100%;
+            height: 100%;
+            background:linear-gradient(rgba(25, 250, 255,.4),rgba(30,20,25,.3));
+        }
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Train Your self | {% block title %} {% endblock title %} </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="script.js"></script>
+  </head>
+  <body class="">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark shadow " cnavbar-dark style = "background-color:white;">
+        <a 
+            style="font-size: 40px;color:green;text-decoration: none;padding-left: 20px;text-transform: uppercase;"
+            class="d-inline-block align-top"
+            href ="#"
+            class="navbar-brand mb-0 h1">StudPortal
+            <!--<img src="{% static 'images/logo2.png' %}" alt="" width="80" heigth="40" style="margin-left: 30px;" />-->
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button class="navbar-toggler"
+                type="button" 
+                data-bs-toggle="collapse"
+                data-bs-target="navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a href="{% url 'home' %}" class="nav-link active" style="font-size: 19px;color:rgb(233, 12, 12);margin-left:10px;margin-right:10px;">Home</a>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a href="#" class="nav-link dropdown-toggle bab"
+                        id="navbarDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false" style="font-size: 19px;color:rgb(233, 12, 12);margin-left:10px;margin-right:10px;">Courses</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="">
+                            <li><a href="{% url 'files' 'PH' %}" class="dropdown-item">PHP</a></li>
+                            <li><a href="{% url 'files' 'JV' %}" class="dropdown-item">JAVA</a></li>
+                            <li><a href="{% url 'files' 'PY' %}" class="dropdown-item">PYTHON</a></li>
+                            <li><a href="{% url 'files' 'HCS' %}" class="dropdown-item">HTML and CSS</a></li>
+                            <li><a href="{% url 'files' 'XM' %}" class="dropdown-item">XML</a></li>
+                            <li><a href="{% url 'files' 'DJ' %}" class="dropdown-item">DJANGO</a></li>
+                            <li><a href="{% url 'files' 'MA' %}" class="dropdown-item">DATABASES</a></li>
+                            <li><a href="{% url 'files' 'EN' %}" class="dropdown-item ">LEARN ENGLISH</a></li>
+                        </ul>
+                    </li>
+               
+                    <li class="nav-item mx-2" >
+                        <a href="{% url 'about' %}" class="nav-link active" style="font-size: 19px;color:rgb(233, 12, 12);margin-left:10px;margin-right:10px;" >About</a>
+                    </li>
+                    <!--<form class="d-flex">
+                    <input type="search" class="form-control me-2" style="padding-right: 20px;color:rgb(233, 12, 12);" placeholder="search">
+                    <button type="submit" class="btn btn-outline-secondary my-2 my-sm-0 " style="margin-right: 20px;">
+                        Search
+                    </button>
+                </form>-->
+                
+                
+                <li class="opt nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle bab active"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false" style="font-size: 19px;color:rgb(233, 12, 12);margin-left:10px;margin-right:10px;">Options</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="">
+                        <!--<li><a href="{% url 'notes' %}" class="dropdown-item">Notes</a></li>-->
+                        <!--<li><a href="{% url 'homework' %}" class="dropdown-item ">Homeworks</a></li>-->
+                        <!--<li><a href="{% url 'todo' %}" class="dropdown-item">To do</a></li>-->
+                        <li><a href="{% url 'books' %}" class="dropdown-item ">Books</a></li>
+                        <!--<li><a href="{% url 'dictionary' %}" class="dropdown-item ">Dictionary</a></li>-->
+                        <li><a href="{% url 'wiki' %}" class="dropdown-item ">Wikipedia</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mx-2">
+                    <a href="{% url 'login' %}" class="nav-link active" style="font-size: 19px;color:rgb(233, 12, 12);margin-left:10px;margin-right:10px;">Login</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a href="{% url 'profile' %}" class="nav-link active" style="font-size: 19px;color:rgb(233, 12, 12);margin-left:10px;margin-right:10px;">Profile</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a href="{% url 'registration' %}" class="nav-link active" style="font-size: 19px;;position:right;color:rgb(233, 12, 12);margin-left:10px;margin-right:10px;" >Registration</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="cont">
+        <div class="conte">
+            <img src="{% static 'images/bel.jpeg' %}" class="d-block w-100" alt="..." height="500px"> <br><br><br><br>
+            <div class="text">
+                Learning increases Your knowledge!
+            </div>
+        </div>
+    </div>
+    {% if messages %}
+        {% for msg in messages %}
+            <div class="alert alert-{{msg.tags}}">
+                {{msg}}
+            </div>
+        {% endfor %}
+
+    {% endif %}
+
+    <!--{% block banner-slider %}
+        
+    {% endblock banner-slider %}-->
+    {% block main-content %}
+
+    {% endblock main-content %}
+
+    <footer class="text-white">
+        <div class="card text-center " style = "background-color:green;">
+            <div class="card-header text-white">
+                We are grateful seeing You here!
+            </div>
+            <div class="card-body">
+            <h5 class="card-title text-white"><i> Learn How to learn !</i></h5>
+            <p class="card-text "><h3 class="">Luxury is about money. Elegance is a question of education ! </h3><br><h4 class="">Sacha Guitry</h4></p>
+            <a href="{% url 'contact' %}" style="background-color:info;"><button id="cont" onclick="changer()"  class="btn btn-info" style="background-color: rgb(252, 255, 255);">Contact Us</button></a>
+            </div>
+            <div class="card-footer text-white">
+            Made By TCHANI Rajaa | L2B(IAI-TOGO)
+            </div>
+        </div>
+    </footer>
+    
+     <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" 
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

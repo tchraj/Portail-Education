@@ -1,0 +1,119 @@
+.owl-carousel .item{
+    /* border: 1px solid black; */
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    transition: transform .5s ease;
+   }
+    .owl-carousel .item:hover{
+       /* border: 1px solid black; */
+       transform : scale(1.1);
+   }
+   
+   /* .owl-carousel img{
+       transition: transform .5s ease;
+     }
+    .owl-carousel img:hover{
+       
+       transform : scale(1.25);
+   } */
+   
+   .owl-next{
+    float:right;
+   }
+   .owl-prev{
+    float:left;
+   }
+   .owl-prev span{
+    font-size: 24px;
+    font-weight: bold;
+   }
+   .owl-next span{
+    font-size: 24px;
+    font-weight: bold;
+   }
+   
+   .cel{
+       background-color:#f9fafa;background-image:linear-gradient(#f9fafa, #fff);
+       background-image:-webkit-linear-gradient(#f9fafa, #fff);
+       background-image:-moz-linear-gradient(#f9fafa, #fff);
+       background-image:-ms-linear-gradient(#f9fafa, #fff);
+       background-image:-o-linear-gradient(#f9fafa,#fff);
+       padding:50px 40px;
+       border:1px solid #f9fafa;
+       padding-bottom:20px;
+   }
+   
+   .smbg{
+       background-color:#f9fafa;
+       background-image:linear-gradient(rgba(110, 69, 143, 0.1), #f9fafa);
+       background-image:-webkit-linear-gradient(rgba(110, 69, 143, 0.1), #f9fafa);
+       background-image:-moz-linear-gradient(rgba(110, 69, 143, 0.1), #f9fafa);
+       background-image:-ms-linear-gradient(rgba(110, 69, 143, 0.1), #f9fafa);
+       background-image:-o-linear-gradient(rgba(110, 69, 143, 0.1), #f9fafa);
+   }
+   
+   .curdbgpro{
+       background-color:#f9fafa;
+       background-image:linear-gradient(rgba(10, 77, 123, 0.1), #f9fafa);
+       background-image:-webkit-linear-gradient(rgba(10, 77, 123, 0.1), #f9fafa);
+       background-image:-moz-linear-gradient(rgba(10, 77, 123, 0.1), #f9fafa);
+       background-image:-ms-linear-gradient(rgba(10, 77, 123, 0.1), #f9fafa);
+       background-image:-o-linear-gradient(rgba(10, 77, 123, 0.1), #f9fafa);
+   }
+   
+   .matiere img{
+       width:90%;
+   }
+   
+   .Langage{
+       color:#0004e0;
+       font-size:22px;
+       line-height:22px;
+       margin-bottom:15px;
+       width:43%;
+       margin:0 auto;
+       text-align:center;       
+   }
+   
+   .matieres a{
+       text-decoration: none;
+   }
+   .nav-link{
+    padding-left: 6px;
+    padding-right: 6px;
+   }
+   .btn:hover{
+        color: rgb(245, 242, 238);
+   }
+   .container ul li{
+    margin: 0 6px;
+   }
+   .corps{
+   background-image: linear-gradient();
+}
+.shadow{
+    border: 1px solid rgb(235, 243, 243);
+}
+.nav-link:hover{
+    color:#020058;
+}
+.you:hover{
+    background-color: rgb(250, 238, 223);
+}
+.imagee{
+    text-decoration: none;
+}
+.dropdown:hover .dropdown-menu{
+    background-color:rgb(243, 159, 90);
+    display: block;
+    border-radius: 15px;
+}
+.nav-item:hover{
+    background-color: green;
+    border-radius: 13px;
+    color:rgb(235, 175, 96);
+}
+.you:hover{
+    background-color:rgb(247, 150, 247);
+}

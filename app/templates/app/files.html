@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}pdf_files{% endblock title %}
+
+{% load crispy_forms_tags %}
+
+{% block main-content %}
+<br><br><br><br>
+<div class="container my-5">
+    <div class="row ">
+        <div class="col-sm-3 text-center" style="font-size: 20px;">
+            {% for val in title %}
+                <a href="#" class="list-group-item list-group-item-action text-dark" aria-current="true" style="font-size:50px;">
+                {{val.title}} </a>
+            {% endfor %}
+        </div>
+        <div class="col-sm-9">
+                {% for file in p_file %}
+                    <div class="col text-center mb-4">
+                        <div style="font-weight:bold;font-size:30px;color:green;">Cliquez sur l'image !</div><br><br>
+                        <a href="{{file.course_file.url}}" class="">
+                            <div>
+                                <img src="{% static 'images/pd3.jpeg' %}" width="500px;" alt="" height="350px;" style="border-radius: 8px;"><br>
+                                </div>
+                            </div>
+                        </a>
+                    </div>                    
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+<br><br><br>
+{% endblock main-content %}
